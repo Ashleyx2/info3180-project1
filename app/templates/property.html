@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Add New Property</h1>
+    {% include 'flash_messages.html' %}
+
+    <form method="POST" action="{{ url_for('add_property') }}" enctype="multipart/form-data" class="border p-5 mr-5 row g-3">
+        <div class="field-group col-md-10">
+            <div class="field-name"> {{ form.title.label(class="mb-1") }} </div>
+            {{ form.title(class="form-control mb-4") }}
+        </div>
+        <div class="field-group col-md-10">
+            <div class="field-name"> {{ form.description.label(class="mb-1") }} </div>
+            {{ form.description(class="form-control mb-4") }}
+        </div>
+        <div class="field-group col-md-5">
+            <div class="field-name"> {{ form.bedrooms.label(class="mb-1") }} </div>
+            {{ form.bedrooms(class="form-control mb-4") }}
+        </div>
+        <div class="field-group col-md-5">
+            <div class="field-name"> {{ form.bathrooms.label(class="mb-1") }} </div>
+            {{ form.bathrooms(class="form-control mb-4") }}
+        </div>
+        <div class="field-group col-md-5">
+            <div class="field-name"> {{ form.price.label(class="mb-1") }} </div>
+            {{ form.price(class="form-control mb-4") }}
+        </div>
+        <div class="field-group col-md-5">
+            <div class="field-name"> {{ form.property_type.label(class="mb-1") }} </div>
+            {{ form.property_type(class="form-control mb-4") }}
+        </div>
+        <div class="field-group col-md-5">
+            <div class="field-name"> {{ form.location.label(class="mb-1") }} </div>
+            {{ form.location(class="form-control mb-4") }}
+        </div>
+        <div class="field-group col-md-10">
+            <div class="field-name"> {{ form.photo.label(class="mb-1") }} </div>
+            {{ form.photo(class=".form-control-file mb-4") }}
+        </div>
+        {{ form.csrf_token }}
+        <div class="col-md-10">
+            <button type="submit" class="btn btn-primary">Add Property</button>
+        </div>
+    </form>
+{% endblock %}

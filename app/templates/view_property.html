@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="card mt-5">
+        <div class="row g-0">
+            <span class="col-md-5"> <img  class="card-img" src="{{ url_for('static', filename='uploads/' + listing.filename) }}"/> </span>
+            
+            <div class="col-md-7">
+                <div class="card-body">
+                    <h3 class="card-title">{{ listing.title }}</h3>
+                    <p class="card-text">     
+                        <div class="my-4">
+                            <span class="btn btn-primary rounded-pill mr-3">${{ listing.price }}</span> <span class="btn bg-warning text-white rounded-pill">{{ listing.property_type }}</span>
+                        </div>
+                        <div class="mb-4">{{ listing.description }}</div>
+                        <div class="mb-4">
+                            <img src="{{ url_for('static', filename='css/bed.svg') }}" width="22" height="22" class="center-svg mr-1"/>
+                            {{ listing.bedrooms }} Bedrooms 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cloud-rain-heavy-fill center-svg mr-1 ml-4" viewBox="0 0 16 16">
+                                <path d="M4.176 11.032a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm.229-7.005a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 10H13a3 3 0 0 0 .405-5.973z"/>
+                            </svg>
+                            {{ listing.bathrooms }} Bathrooms
+                        </div>
+                        <div class="mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#currentColor" class="bi bi-geo-alt center-svg" viewBox="0 0 16 16">
+                                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            </svg>
+                            {{ listing.location }}
+                        </div>
+                    </p>
+                    <button class="btn theme-color text-white rounded">Email Realtor</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
